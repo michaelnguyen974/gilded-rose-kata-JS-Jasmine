@@ -72,11 +72,18 @@ var shop;
       expect(items[0].quality).toEqual(32);
     })
 
-    it("Aged blue cheese quality increases by 1 if SellIn is greater than 11", () => {
+    it("Aged blue cheese quality increases by 1 if SellIn is greater or equal to 11", () => {
       var item = [new Item("Aged Blue Cheese", 11, 30)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(31);
+    })
+
+    it("Aged blue cheese quality is set to default quality if quality >= 50 and SellIn greater than 0 ", () => {
+      var item = [new Item("Aged Blue Cheese", 1, 50)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50);
     })
   })
   
