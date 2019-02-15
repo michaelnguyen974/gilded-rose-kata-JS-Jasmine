@@ -12,11 +12,18 @@ var shop;
       expect(items[0].name).toEqual("Aged Brie");
     });
 
-    it("Aged brie will increase quality when SellIn date is reached", () => {
+    it("Aged brie will increase quality by 2 when SellIn date is 0", () => {
       var item = [new Item("Aged Brie", 0, 0)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(2)
+    })
+
+    it("Aged Brie does not increase in quality when quality is already at the threshold of 50", () => {
+      var item = [new Item("Aged Brie", 0, 49)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50)
     })
 
     it("Aged Brie will increase in quality by 1 when SellIn date is a positive integer", () => {
@@ -25,66 +32,79 @@ var shop;
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(3)
     })
-    
-    it("Aged Brie will increase in quality when the SellIn date has gone down to 0", () => {
-      var item = [new Item("Aged Brie", 0, 2)]
-      var gildedRose = new Shop(item);
-      var items = gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(4)
-    })
 
   })
   
   describe("Any type of food", () => {
+
+    it("any food that has a positive integer SellIn date will have it's quality decrease by 1", () => {
+      var item = [new Item("Could be any food", 50, 50)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(49)
+    })
+
     it("any food that has a SellIn of 0 apart from aged brie will have it's quality subtracted by 2", () => {
       var item = [new Item("Could be any food", 0, 9)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(7)
     })
-    it("any food that has a positive integer SellIn date will have it's quality decrease by 1", () => {
-      var item = [new Item("Could be any food", 1, 40)]
-      var gildedRose = new Shop(item);
-      var items = gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(39)
-    })
   })
 
-  describe('Aged Blue Cheese', () => {
-    it("Aged Blue Cheese quality goes to 0 when SellIn equals 0", () => {
-      var item = [new Item("Aged Blue Cheese", 0, 100)]
+  describe('tickets', () => {
+    it("tickets quality goes to 0 when SellIn equals 0", () => {
+      var item = [new Item("tickets", 0, 100)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(0);
     })
 
-    it('Aged blue cheese quality increases by 3 if SellIn is less than 6', () => {
-      var item = [new Item("Aged Blue Cheese", 5, 30)]
+    it('tickets quality increases by 3 if SellIn is less than 6', () => {
+      var item = [new Item("tickets", 5, 30)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(33);
     })
 
-    it('Aged blue cheese quality increases by 2 if sellIn date is greater than 5', () => {
-      var item = [new Item("Aged Blue Cheese", 6, 30)]
+    it('tickets quality increases by 2 if sellIn date is greater than 5', () => {
+      var item = [new Item("tickets", 6, 30)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(32);
     })
 
-    it("Aged blue cheese quality increases by 1 if SellIn is greater or equal to 11", () => {
-      var item = [new Item("Aged Blue Cheese", 11, 30)]
+    it("tickets quality increases by 1 if SellIn is greater or equal to 11", () => {
+      var item = [new Item("tickets", 11, 30)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(31);
     })
 
-    it("Aged blue cheese quality is set to default quality if quality >= 50 and SellIn greater than 0 ", () => {
-      var item = [new Item("Aged Blue Cheese", 1, 50)]
+    it("ticket quality does not depreciate if quality >= 50 AND sellIn is a positive integer ", () => {
+      var item = [new Item("tickets", 1, 50)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(50);
     })
+
+    it("tickets quality increases by one if sellIn date is >= 11 and quality >= 50", () => {
+      var item = [new Item("tickets", 50, 50)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50);
+    })
+  })
+
+  describe("Sulfuras", () => {
+
+    it("Sulfuras quality will be set to 0 when SellIn = 0", () => {
+      var item = [new Item("Sulfuras", 0, 0)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(0)
+    })
+
   })
   
 });
