@@ -33,6 +33,13 @@ var shop;
       expect(items[0].quality).toEqual(3)
     })
 
+    it("Aged Brie sellIn decreases by 1 regardless of quality", () => {
+      var item = [new Item("Aged Brie", 9, 0)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toEqual(8)
+    })
+
   })
   
   describe("Any type of food", () => {
@@ -49,6 +56,13 @@ var shop;
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(7)
+    })
+
+    it("any food sellIn decreases by 1 regardless of quality", () => {
+      var item = [new Item("Could be any food", 9, 0)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toEqual(8)
     })
   })
 
@@ -98,11 +112,11 @@ var shop;
 
   describe("Sulfuras", () => {
 
-    it("Sulfuras quality will be set to 0 when SellIn = 0", () => {
-      var item = [new Item("Sulfuras", 0, 0)]
+    it("Sulfuras quality not affected by SellIn date, quality is preserved", () => {
+      var item = [new Item("Sulfuras", -900, 10000)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(0)
+      expect(items[0].quality).toEqual(10000)
     })
 
   })
