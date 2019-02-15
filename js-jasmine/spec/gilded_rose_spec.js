@@ -44,6 +44,12 @@ var shop;
   
   describe("Any type of food", () => {
 
+    it("looks for Could be any food in Item object via its property name", function() {
+      var gildedRose = new Shop([ new Item("Could be any food", 0, 0) ]);
+      var items = gildedRose.updateQuality();
+      expect(items[0].name).toEqual("Could be any food");
+    });
+
     it("any food that has a positive integer SellIn date will have it's quality decrease by 1", () => {
       var item = [new Item("Could be any food", 50, 50)]
       var gildedRose = new Shop(item);
@@ -64,9 +70,17 @@ var shop;
       var items = gildedRose.updateQuality();
       expect(items[0].sellIn).toEqual(8)
     })
+    
   })
 
   describe('tickets', () => {
+
+    it("looks for tickets in Item object via its property name", function() {
+      var gildedRose = new Shop([ new Item("tickets", 0, 0) ]);
+      var items = gildedRose.updateQuality();
+      expect(items[0].name).toEqual("tickets");
+    });
+
     it("tickets quality goes to 0 when SellIn equals 0", () => {
       var item = [new Item("tickets", 0, 100)]
       var gildedRose = new Shop(item);
@@ -107,6 +121,13 @@ var shop;
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(50);
+    })
+
+    it("tickets sellIn decreases by 1 regardless of quality", () => {
+      var item = [new Item("Aged Brie", 9, 90)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toEqual(8)
     })
   })
 
