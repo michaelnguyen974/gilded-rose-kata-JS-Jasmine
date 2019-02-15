@@ -52,7 +52,7 @@ var shop;
 
   describe('Aged Blue Cheese', () => {
     it("Aged Blue Cheese quality goes to 0 when SellIn equals 0", () => {
-      var item = [new Item("Aged Blue Cheese", 0, 50)]
+      var item = [new Item("Aged Blue Cheese", 0, 100)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(0);
@@ -70,6 +70,13 @@ var shop;
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(32);
+    })
+
+    it("Aged blue cheese quality increases by 1 if SellIn is greater than 11", () => {
+      var item = [new Item("Aged Blue Cheese", 11, 30)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(31);
     })
   })
   
