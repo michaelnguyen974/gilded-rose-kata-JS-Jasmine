@@ -64,6 +64,13 @@ var shop;
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(33);
     })
+
+    it('Aged blue cheese quality increases by 2 if sellIn date is greater than 5', () => {
+      var item = [new Item("Aged Blue Cheese", 6, 30)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(32);
+    })
   })
   
 });
