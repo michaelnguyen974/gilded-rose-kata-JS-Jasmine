@@ -49,5 +49,14 @@ var shop;
       expect(items[0].quality).toEqual(39)
     })
   })
+
+  describe('Aged Blue Cheese', () => {
+    it("describes Aged Blue Cheese", () => {
+      var item = [new Item("Aged Blue Cheese", 10, 40)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(42);
+    })
+  })
   
 });
