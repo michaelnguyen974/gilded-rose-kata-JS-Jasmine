@@ -57,6 +57,13 @@ var shop;
       var items = gildedRose.updateQuality();
       expect(items[0].quality).toEqual(0);
     })
+
+    it('Aged blue cheese quality increases by 3 if SellIn is less than 6', () => {
+      var item = [new Item("Aged Blue Cheese", 5, 30)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(33);
+    })
   })
   
 });
