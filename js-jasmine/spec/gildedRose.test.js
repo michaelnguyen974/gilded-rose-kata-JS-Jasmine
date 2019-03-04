@@ -90,6 +90,13 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(0);
     })
 
+    test("tickets quality increases by 1 when sellIn <11, quality <50", () => {
+      var item = [new Item("tickets", 10, 49)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(11);
+    })
+
     test('tickets quality increases by 3 if SellIn is less than 6', () => {
       var item = [new Item("tickets", 5, 30)]
       var gildedRose = new Shop(item);
