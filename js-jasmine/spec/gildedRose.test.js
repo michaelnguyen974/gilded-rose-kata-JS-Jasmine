@@ -94,7 +94,14 @@ describe("Gilded Rose", function() {
       var item = [new Item("tickets", 10, 49)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(11);
+      expect(items[0].quality).toEqual(50);
+    })
+
+    test("tickets quality increases by 2 when sellIn <6, quality <50", () => {
+      var item = [new Item("tickets", 4, 48)]
+      var gildedRose = new Shop(item);
+      var items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50);
     })
 
     test('tickets quality increases by 3 if SellIn is less than 6', () => {
