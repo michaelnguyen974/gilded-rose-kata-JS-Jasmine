@@ -68,3 +68,9 @@ I am a ticket,
 My SellIn date decreases by 1, 
 Regardless of my quality
 ```
+
+```
+I am Sulfuras, 
+My quality is preserved,
+regardless of my SellIn date
+```
