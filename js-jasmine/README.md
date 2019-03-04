@@ -21,3 +21,17 @@ I am aged Brie,
 My SellIn date decreases by 1, 
 regardless of my quality
 ```
+
+```
+I am any food,
+If my SellIn date is a positive integer, 
+the quality will decrease by 1
+
+I am anything,
+If my SellIn date is 0,
+the quality will decrease by 2
+
+I am food, 
+Regardless of my quality, 
+the Sellin date will decrease by 1
+```

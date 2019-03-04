@@ -59,7 +59,7 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(49);
     })
 
-    test("any food that has a SellIn of 0 apart from aged brie will have it's quality subtracted by 2", () => {
+    test("any food that has a SellIn of 0 will have it's quality subtracted by 2", () => {
       var item = [new Item("Could be any food", 0, 9)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();
