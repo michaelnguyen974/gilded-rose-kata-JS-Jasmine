@@ -14,7 +14,7 @@ describe("Gilded Rose", function() {
       expect(items[0].name).toEqual("Aged Brie");
     });
 
-    test("Aged brie will increase quality by 2 when SellIn date is 0", () => {
+    test("Aged brie will increase quality by 2 and quality starts < 50 when SellIn date is 0", () => {
       var item = [new Item("Aged Brie", 0, 0)]
       var gildedRose = new Shop(item);
       var items = gildedRose.updateQuality();

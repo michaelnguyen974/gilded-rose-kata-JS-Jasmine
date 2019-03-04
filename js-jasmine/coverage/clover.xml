@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1551696694124" clover="3.2.0">
-  <project timestamp="1551696694124" name="All files">
+<coverage generated="1551698908736" clover="3.2.0">
+  <project timestamp="1551698908736" name="All files">
     <metrics statements="31" coveredstatements="31" conditionals="35" coveredconditionals="35" methods="3" coveredmethods="3" elements="69" coveredelements="69" complexity="0" loc="31" ncloc="31" packages="1" files="1" classes="1"/>
     <file name="gilded_rose.js" path="/Users/michaelnguyen/Makers/week_10/GildedRose-Refactoring-Kata/js-jasmine/src/gilded_rose.js">
       <metrics statements="31" coveredstatements="31" conditionals="35" coveredconditionals="35" methods="3" coveredmethods="3"/>
