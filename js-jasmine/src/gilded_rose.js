@@ -2,6 +2,27 @@ class Shop {
   constructor(items=[]){
     this.items = items;
   }
+
+  addToItemsArray(item) {
+      this.items.push(item)
+  }
+
+  updateAgedBrie() {
+    if (this.increaseBrieQualityByOne() === true) {
+      return this.items[0].quality += 1
+    }
+  };
+
+  increaseBrieQualityByOne() {
+    for (var i = 0; i < this.items.length; i++) {
+      if (this.items[i].name === 'Aged Brie' && this.items[i].sellIn > 0 && this.items[i].quality < 50) {
+        return true
+      } else {
+        return this.items
+      } 
+    }; 
+  }
+
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
       if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'tickets') {

@@ -1,6 +1,6 @@
 const { Item } = require('../src/item.js')
 const { Shop } = require('../src/gilded_rose.js')
-describe("Gilded Rose", function() {
+describe("Shop", function() {
 
   beforeEach( () => {
     shop = new Shop
@@ -110,7 +110,7 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(33);
     })
 
-    test('tickets quality increases by 2 if sellIn date is greater than 5', () => {
+    test('tickets quality increases by 2 if sellIn date is less than 11', () => {
       var item = [new Item("tickets", 6, 30)]
       var shop = new Shop(item);
       var items = shop.updateQuality();
