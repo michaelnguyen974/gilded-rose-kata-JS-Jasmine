@@ -9,7 +9,8 @@ class Shop {
 
   updateAgedBrie() {
     if (this.increaseBrieQualityByOne() === true) {
-      return this.items[0].quality += 1
+      this.items[0].quality += 1
+      this.items[0].sellIn -= 1
     }
   };
 
