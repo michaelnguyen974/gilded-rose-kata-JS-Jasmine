@@ -1,6 +1,7 @@
 const { Item } = require('../src/item.js')
 const { Shop } = require('../src/gilded_rose.js')
 const { AgedBrie } = require('../src/AgedBrie.js')
+const { NormalItem} = require('../src/NormalItem')
 describe("Shop", function() {
 
   beforeEach( () => {
@@ -38,29 +39,23 @@ describe("Shop", function() {
 
   })
   
-  // describe("Normal item", () => {
+  describe("Normal item", () => {
 
-  //   test("looks for Normal item in Item object via its property name", function() {
-  //     var shop = new Shop([ new NormalItem("Normal item", 0, 0) ]);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].name).toEqual("Normal item");
-  //   });
+    // test("any normal item that has a positive integer SellIn date will have it's quality decrease by 1", () => {
+    //   var item = [new NormalItem("Normal item", 50, 50)]
+    //   var shop = new Shop(item);
+    //   shop.updateQuality();
+    //   expect(shop.items[0].quality).toEqual(49);
+    // })
 
-  //   test("any item that has a positive integer SellIn date will have it's quality decrease by 1", () => {
-  //     var item = [new Item("Normal item", 50, 50)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(49);
-  //   })
+    test("any normal item that has a SellIn of 0 will have it's quality subtracted by 2", () => {
+      var item = [new NormalItem(0, 9)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(7);
+    })
 
-  //   test("any item that has a SellIn of 0 will have it's quality subtracted by 2", () => {
-  //     var item = [new Item("Normal item", 0, 9)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(7);
-  //   })
-
-  //   test("any item sellIn decreases by 1 regardless of quality", () => {
+  //   test("any normal item sellIn decreases by 1 regardless of quality", () => {
   //     var item = [new Item("Normal item", 9, 0)]
   //     var shop = new Shop(item);
   //     var items = shop.updateQuality();
@@ -169,4 +164,4 @@ describe("Shop", function() {
   //   });
   // })
   
-// });
+});
