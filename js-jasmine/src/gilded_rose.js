@@ -5,9 +5,7 @@ class Shop {
 
   updateQuality() {
     this.items.forEach(item => {
-      if (item.name === 'Aged Brie') {
         return item.updateQuality()
-      }
     });
   }
 

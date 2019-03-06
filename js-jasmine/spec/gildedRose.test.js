@@ -8,12 +8,6 @@ describe("Shop", function() {
   })
   describe("Aged Brie", () => {
 
-    test("looks for aged brie in Item object via its property name", function() {
-      var shop = new Shop([ new AgedBrie(0, 0) ]);
-      shop.updateQuality();
-      expect(shop.items[0].name).toEqual("Aged Brie");
-    });
-
     test("Aged brie will increase quality by 2 and quality starts < 50 when SellIn date is 0", () => {
       var item = [new AgedBrie(0, 0)]
       var shop = new Shop(item);
@@ -44,13 +38,13 @@ describe("Shop", function() {
 
   })
   
-  describe("Normal item", () => {
+  // describe("Normal item", () => {
 
-    test("looks for Normal item in Item object via its property name", function() {
-      var shop = new Shop([ new NormalItem("Normal item", 0, 0) ]);
-      var items = shop.updateQuality();
-      expect(items[0].name).toEqual("Normal item");
-    });
+  //   test("looks for Normal item in Item object via its property name", function() {
+  //     var shop = new Shop([ new NormalItem("Normal item", 0, 0) ]);
+  //     var items = shop.updateQuality();
+  //     expect(items[0].name).toEqual("Normal item");
+  //   });
 
   //   test("any item that has a positive integer SellIn date will have it's quality decrease by 1", () => {
   //     var item = [new Item("Normal item", 50, 50)]
@@ -146,7 +140,7 @@ describe("Shop", function() {
   //     expect(items[0].sellIn).toEqual(8);
   //   })
     
-  })
+  // })
 
   // describe("Sulfuras", () => {
 
