@@ -11,6 +11,7 @@ class NormalItem {
     else if (this.quality <= 50 && this.sellIn > 0) {
       this.quality -= 1
     }
+    this.sellIn -= 1
   }
 }
 

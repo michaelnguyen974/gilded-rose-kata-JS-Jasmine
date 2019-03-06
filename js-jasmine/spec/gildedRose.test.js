@@ -55,12 +55,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(7);
     })
 
-  //   test("any normal item sellIn decreases by 1 regardless of quality", () => {
-  //     var item = [new Item("Normal item", 9, 0)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].sellIn).toEqual(8);
-  //   })
+    test("any normal item sellIn decreases by 1 regardless of quality", () => {
+      var item = [new NormalItem(9, 0)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].sellIn).toEqual(8);
+    })
     
   })
 
