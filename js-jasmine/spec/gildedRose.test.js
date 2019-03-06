@@ -44,30 +44,30 @@ describe("Shop", function() {
 
   })
   
-  // describe("Any type of food", () => {
+  // describe("Normal item", () => {
 
-  //   test("looks for Could be any food in Item object via its property name", function() {
-  //     var shop = new Shop([ new Item("Could be any food", 0, 0) ]);
+  //   test("looks for Normal item in Item object via its property name", function() {
+  //     var shop = new Shop([ new Item("Normal item", 0, 0) ]);
   //     var items = shop.updateQuality();
-  //     expect(items[0].name).toEqual("Could be any food");
+  //     expect(items[0].name).toEqual("Normal item");
   //   });
 
-  //   test("any food that has a positive integer SellIn date will have it's quality decrease by 1", () => {
-  //     var item = [new Item("Could be any food", 50, 50)]
+  //   test("any item that has a positive integer SellIn date will have it's quality decrease by 1", () => {
+  //     var item = [new Item("Normal item", 50, 50)]
   //     var shop = new Shop(item);
   //     var items = shop.updateQuality();
   //     expect(items[0].quality).toEqual(49);
   //   })
 
-  //   test("any food that has a SellIn of 0 will have it's quality subtracted by 2", () => {
-  //     var item = [new Item("Could be any food", 0, 9)]
+  //   test("any item that has a SellIn of 0 will have it's quality subtracted by 2", () => {
+  //     var item = [new Item("Normal item", 0, 9)]
   //     var shop = new Shop(item);
   //     var items = shop.updateQuality();
   //     expect(items[0].quality).toEqual(7);
   //   })
 
-  //   test("any food sellIn decreases by 1 regardless of quality", () => {
-  //     var item = [new Item("Could be any food", 9, 0)]
+  //   test("any item sellIn decreases by 1 regardless of quality", () => {
+  //     var item = [new Item("Normal item", 9, 0)]
   //     var shop = new Shop(item);
   //     var items = shop.updateQuality();
   //     expect(items[0].sellIn).toEqual(8);
