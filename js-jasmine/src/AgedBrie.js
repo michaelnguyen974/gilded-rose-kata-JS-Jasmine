@@ -6,7 +6,7 @@ class AgedBrie {
   }
 
   updateQuality() {
-    if (this.quality < 50 && !this.sellIn > 0) {
+    if (this.quality < 50 && this.sellIn <= 0) {
       this.quality += 2
       this.updateSellIn()
     }
