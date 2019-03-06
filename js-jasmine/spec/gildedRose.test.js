@@ -21,12 +21,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(2);
     })
 
-    // test("Aged Brie does not increase in quality when quality is already at the threshold of 50", () => {
-    //   var item = [new Item("Aged Brie", 0, 50)]
-    //   var shop = new Shop(item);
-    //   var items = shop.updateQuality();
-    //   expect(items[0].quality).toEqual(50);
-    // })
+    test("Aged Brie does not increase in quality when quality is already at the threshold of 50", () => {
+      var item = [new AgedBrie(0, 50)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(50);
+    })
 
     test("Aged Brie will increase in quality by 1 when SellIn date is a positive integer", () => {
       var item = [new AgedBrie(1, 2)]
