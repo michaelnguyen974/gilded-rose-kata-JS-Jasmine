@@ -35,12 +35,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(3);
     })
 
-    // test("Aged Brie sellIn decreases by 1 regardless of quality", () => {
-    //   var item = [new Item("Aged Brie", 9, 0)]
-    //   var shop = new Shop(item);
-    //   var items = shop.updateQuality();
-    //   expect(items[0].sellIn).toEqual(8);
-    // })
+    test("Aged Brie sellIn decreases by 1 regardless of quality", () => {
+      var item = [new AgedBrie(9, 0)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].sellIn).toEqual(8);
+    })
 
   })
   
