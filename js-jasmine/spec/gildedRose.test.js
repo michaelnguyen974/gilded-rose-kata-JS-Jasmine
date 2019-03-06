@@ -2,6 +2,7 @@ const { Item } = require('../src/item.js')
 const { Shop } = require('../src/gilded_rose.js')
 const { AgedBrie } = require('../src/AgedBrie.js')
 const { NormalItem} = require('../src/NormalItem')
+const { Sulfuras } = require('../src/LegendaryItems')
 describe("Shop", function() {
 
   beforeEach( () => {
@@ -137,23 +138,23 @@ describe("Shop", function() {
     
   // })
 
-  // describe("Sulfuras", () => {
+  describe("Sulfuras", () => {
 
-  //   test("Sulfuras quality not affected by SellIn date, quality is preserved", () => {
-  //     var item = [new Item("Sulfuras", 9, 10)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(10);
-  //   })
+    test("Sulfuras quality always stays at 80", () => {
+      var item = [new Sulfuras(9, 10)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(80);
+    })
 
-  //   test("Sulfuras SellIn remains the same", () => {
-  //     var item = [new Item("Sulfuras", 9, 10)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].sellIn).toEqual(9);
-  //   })
+    // test("Sulfuras SellIn remains the same", () => {
+    //   var item = [new Item("Sulfuras", 9, 10)]
+    //   var shop = new Shop(item);
+    //   var items = shop.updateQuality();
+    //   expect(items[0].sellIn).toEqual(9);
+    // })
 
-  // })
+  })
 
   // describe("Conjured items", () => {
   //   test("conjured item", () => {
