@@ -5,7 +5,9 @@ class Tickets {
   }
 
   updateQuality() {
-    
+    if (this.sellIn === 0) {
+      return this.quality = 0
+    }
   }
 }
 

@@ -69,7 +69,7 @@ describe("Shop", function() {
   describe('tickets', () => {
 
     test("tickets quality goes to 0 when SellIn equals 0", () => {
-      var item = [new Tickets(0, 100)]
+      var item = [new Tickets(0, 50)]
       var shop = new Shop(item);
       shop.updateQuality();
       expect(shop.items[0].quality).toEqual(0);
