@@ -3,6 +3,7 @@ const { Shop } = require('../src/gilded_rose.js')
 const { AgedBrie } = require('../src/AgedBrie.js')
 const { NormalItem} = require('../src/NormalItem')
 const { Sulfuras } = require('../src/LegendaryItems')
+const { Tickets } = require('../src/Tickets.js')
 describe("Shop", function() {
 
   beforeEach( () => {
