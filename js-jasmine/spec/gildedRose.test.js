@@ -110,12 +110,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(31);
     })
 
-  //   test("ticket quality does not depreciate if quality >= 50 AND sellIn is a positive integer ", () => {
-  //     var item = [new Item("tickets", 1, 50)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(50);
-  //   })
+    test("ticket quality does not depreciate if quality >= 50 AND sellIn is a positive integer ", () => {
+      var item = [new Tickets(1, 50)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(50);
+    })
 
   //   test("tickets quality does not change when quality >= 50", () => {
   //     var item = [new Item("tickets", 50, 50)]

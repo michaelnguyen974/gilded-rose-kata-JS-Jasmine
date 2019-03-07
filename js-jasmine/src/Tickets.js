@@ -10,11 +10,14 @@ class Tickets {
       this.quality = 0
     } else if (sellIn >= 1 && sellIn <= 5 && this.quality < 50) {
       this.quality += 3
-    } else if (sellIn >= 6 && sellIn <= 10 && this.quality <= 50) {
+    } else if (sellIn >= 6 && sellIn <= 10 && this.quality < 50) {
       this.quality += 2
     } else if (sellIn > 10 && this.quality < 50) {
       this.quality += 1
+    } else {
+      this.quality = 50
     }
+    this.sellIn -= 1
   }
 }
 
