@@ -9,7 +9,7 @@ class Tickets {
       this.quality = 0
     } else if (this.sellIn < 11 && this.quality < 50) {
       this.quality += 1
-    }
+    } 
   }
 }
 
