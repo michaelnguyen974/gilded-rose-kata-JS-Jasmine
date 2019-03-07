@@ -103,12 +103,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(32);
     })
 
-    // test("tickets quality increases by 1 if SellIn is greater or equal to 11", () => {
-    //   var item = [new Tickets(11, 30)]
-    //   var shop = new Shop(item);
-    //   shop.updateQuality();
-    //   expect(shop.items[0].quality).toEqual(31);
-    // })
+    test("tickets quality increases by 1 if SellIn is greater or equal to 11", () => {
+      var item = [new Tickets(11, 30)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(31);
+    })
 
   //   test("ticket quality does not depreciate if quality >= 50 AND sellIn is a positive integer ", () => {
   //     var item = [new Item("tickets", 1, 50)]
