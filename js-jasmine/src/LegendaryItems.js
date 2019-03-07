@@ -6,7 +6,7 @@ class Sulfuras {
   }
 
   updateQuality() {
-    this.quality = 80
+    return this.quality = 80
   }
 
 }

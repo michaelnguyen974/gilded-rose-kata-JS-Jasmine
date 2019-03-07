@@ -65,20 +65,14 @@ describe("Shop", function() {
     
   })
 
-  // describe('tickets', () => {
+  describe('tickets', () => {
 
-  //   test("looks for tickets in Item object via its property name", function() {
-  //     var shop = new Shop([ new Item("tickets", 0, 0) ]);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].name).toEqual("tickets");
-  //   });
-
-  //   test("tickets quality goes to 0 when SellIn equals 0", () => {
-  //     var item = [new Item("tickets", 0, 100)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(0);
-  //   })
+    test("tickets quality goes to 0 when SellIn equals 0", () => {
+      var item = [new Tickets(0, 100)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(0);
+    })
 
   //   test("tickets quality increases by 1 when sellIn <11, quality <50", () => {
   //     var item = [new Item("tickets", 10, 49)]
@@ -136,7 +130,7 @@ describe("Shop", function() {
   //     expect(items[0].sellIn).toEqual(8);
   //   })
     
-  // })
+  })
 
   describe("Sulfuras", () => {
 
@@ -147,12 +141,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(80);
     })
 
-    // test("Sulfuras SellIn remains the same", () => {
-    //   var item = [new Item("Sulfuras", 9, 10)]
-    //   var shop = new Shop(item);
-    //   var items = shop.updateQuality();
-    //   expect(items[0].sellIn).toEqual(9);
-    // })
+    test("Sulfuras SellIn remains the same", () => {
+      var item = [new Sulfuras(9, 10)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].sellIn).toEqual(9);
+    })
 
   })
 
