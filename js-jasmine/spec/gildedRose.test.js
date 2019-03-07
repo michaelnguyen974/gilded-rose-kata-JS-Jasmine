@@ -75,40 +75,40 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(0);
     })
 
-    test("tickets quality increases by 1 when sellIn <11, quality <50", () => {
-      var item = [new Tickets(10, 49)]
-      var shop = new Shop(item);
-      shop.updateQuality();
-      expect(shop.items[0].quality).toEqual(50);
-    })
+    // test("tickets quality increases by 1 when sellIn <11, quality <50", () => {
+    //   var item = [new Tickets(10, 49)]
+    //   var shop = new Shop(item);
+    //   shop.updateQuality();
+    //   expect(shop.items[0].quality).toEqual(50);
+    // })
 
     test("tickets quality increases by 2 when sellIn <6, quality threshold hits 50", () => {
-      var item = [new Tickets(4, 48)]
+      var item = [new Tickets(7, 48)]
       var shop = new Shop(item);
       shop.updateQuality();
       expect(shop.items[0].quality).toEqual(50);
     })
 
-  //   test('tickets quality increases by 3 if SellIn is less than 6 and quality < 50', () => {
-  //     var item = [new Item("tickets", 5, 30)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(33);
-  //   })
+    test('tickets quality increases by 3 if SellIn is less than 6 and quality < 50', () => {
+      var item = [new Tickets(5, 30)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(33);
+    })
 
-  //   test('tickets quality increases by 2 if sellIn date is less than 11', () => {
-  //     var item = [new Item("tickets", 6, 30)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(32);
-  //   })
+    test('tickets quality increases by 2 if sellIn date is less than 11', () => {
+      var item = [new Tickets(6, 30)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(32);
+    })
 
-  //   test("tickets quality increases by 1 if SellIn is greater or equal to 11", () => {
-  //     var item = [new Item("tickets", 11, 30)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(31);
-  //   })
+    // test("tickets quality increases by 1 if SellIn is greater or equal to 11", () => {
+    //   var item = [new Tickets(11, 30)]
+    //   var shop = new Shop(item);
+    //   shop.updateQuality();
+    //   expect(shop.items[0].quality).toEqual(31);
+    // })
 
   //   test("ticket quality does not depreciate if quality >= 50 AND sellIn is a positive integer ", () => {
   //     var item = [new Item("tickets", 1, 50)]

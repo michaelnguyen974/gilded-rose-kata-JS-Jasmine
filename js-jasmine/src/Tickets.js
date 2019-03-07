@@ -5,10 +5,13 @@ class Tickets {
   }
 
   updateQuality() {
-    if (this.sellIn === 0) {
+    var sellIn = this.sellIn
+    if (this.sellIn === 0 && this.quality <= 50) {
       this.quality = 0
-    } else if (this.sellIn < 11 && this.quality < 50) {
-      this.quality += 1
+    } else if (sellIn >= 1 && sellIn <= 5 && this.quality < 50) {
+      this.quality += 3
+    } else if (sellIn >= 6 && sellIn <= 10 && this.quality <= 50) {
+      this.quality += 2
     } 
   }
 }
