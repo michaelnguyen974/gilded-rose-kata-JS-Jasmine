@@ -6,7 +6,9 @@ class Tickets {
 
   updateQuality() {
     if (this.sellIn === 0) {
-      return this.quality = 0
+      this.quality = 0
+    } else if (this.sellIn < 11 && this.quality < 50) {
+      this.quality += 1
     }
   }
 }

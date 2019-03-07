@@ -75,12 +75,12 @@ describe("Shop", function() {
       expect(shop.items[0].quality).toEqual(0);
     })
 
-  //   test("tickets quality increases by 1 when sellIn <11, quality <50", () => {
-  //     var item = [new Item("tickets", 10, 49)]
-  //     var shop = new Shop(item);
-  //     var items = shop.updateQuality();
-  //     expect(items[0].quality).toEqual(50);
-  //   })
+    test("tickets quality increases by 1 when sellIn <11, quality <50", () => {
+      var item = [new Tickets(10, 49)]
+      var shop = new Shop(item);
+      shop.updateQuality();
+      expect(shop.items[0].quality).toEqual(50);
+    })
 
   //   test("tickets quality increases by 2 when sellIn <6, quality threshold hits 50", () => {
   //     var item = [new Item("tickets", 4, 48)]
